@@ -48,7 +48,11 @@ public class FileStorage implements Storage {
     }
 
     @Override
-    public void initialize() throws IOException {}
+    public void initialize() throws IOException {
+        if (System.getProperty("BlueMap.DisableFileStorage") != null) {
+            throw new IOException("BlueMap file storage has been disabled via -DBlueMap.DisableFileStorage, if this is unexpected, please contact your host!");
+        }
+    }
 
     @Override
     public FileMapStorage map(String mapId) {
