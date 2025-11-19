@@ -251,13 +251,10 @@ public class BlueMapService implements Closeable {
                     throw new ConfigurationException("There is no storage-configuration for '" + storageId + "'!\n" +
                             "You will either need to define that storage, or change the map-config to use a storage-config that exists.");
                 }
-                if (System.getProperty("BlueMap.DisableFileStorage") != null && storageConfig.getStorageType().getKey().equals("bluemap:file")) {
+                if (System.getProperty("BlueMap.DisableFileStorage") != null && storageConfig.getStorageType() == StorageType.FILE) {
                     throw new ConfigurationException("File Storage has been disabled via '-DBlueMap.DisableFileStorage'!\n" +
                             "If this is unexpected, please contact your host!");
                 }
-                Logger.global.logInfo("File storage disabled: " + (System.getProperty("BlueMap.DisableFileStorage") != null));
-                Logger.global.logInfo("File storage disabled: " + (storageConfig.getStorageType().getKey().equals("bluemap:file")));
-
 
                 Logger.global.logInfo("Initializing Storage: '" + storageId + "' (Type: '" + storageConfig.getStorageType().getKey() + "')");
 
