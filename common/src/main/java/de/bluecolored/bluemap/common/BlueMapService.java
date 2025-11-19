@@ -27,6 +27,7 @@ package de.bluecolored.bluemap.common;
 import de.bluecolored.bluemap.common.config.ConfigurationException;
 import de.bluecolored.bluemap.common.config.MapConfig;
 import de.bluecolored.bluemap.common.config.storage.StorageConfig;
+import de.bluecolored.bluemap.common.config.storage.StorageType;
 import de.bluecolored.bluemap.common.debug.StateDumper;
 import de.bluecolored.bluemap.common.plugin.Plugin;
 import de.bluecolored.bluemap.core.logger.Logger;
