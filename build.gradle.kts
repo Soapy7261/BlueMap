@@ -5,6 +5,13 @@ plugins {
     id("org.graalvm.buildtools.native") version "0.11.1"
 }
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+        nativeImageCapable = true
+    }
+}
+
 graalvmNative {
     toolchainDetection.set(true)
     binaries {

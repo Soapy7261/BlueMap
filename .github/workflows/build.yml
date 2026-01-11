@@ -48,9 +48,14 @@ jobs:
           cache: 'gradle'
       - name: Build normally
         run: ./gradlew release --stacktrace
+      - name: Upload Normal Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: artifacts
+          path: build/release/*
       - name: Build native
         run: ./gradlew nativeCompile --stacktrace
-      - name: Upload Artifacts
+      - name: Upload Native Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: artifacts
